@@ -1,0 +1,169 @@
+v: 1
+
+roles:
+  - Software Engineer
+  - UX Designer
+  - Product Manager
+  - Manager, Software Engineering
+
+levels:
+  Software Engineer:
+    1: Software Engineer I
+    2: Software Engineer II
+    3: Software Engineer III
+    4: Senior Software Engineer
+    5: Staff Software Engineer
+    6: Senior Staff Software Engineer
+    7: Principal Software Engineer
+    8: Distinguished Software Engineer
+    9: Senior Distinguished Software Engineer
+    10: Software Engineering Fellow
+  UX Designer:
+    1: UX Designer I
+    2: UX Designer II
+    3: UX Designer III
+    4: Senior UX Designer
+    5: Staff UX Designer
+    6: Senior Staff UX Designer
+    7: Principal UX Designer
+    8: Distinguished UX Designer
+    9: Senior Distinguished UX Designer
+    10: UX Design Fellow
+  Product Manager:
+    2: Product Manager
+    4: Senior Product Manager
+    5: Staff Product Manager
+    7: Principal Product Manager
+    8: Distinguished Product Manager
+    10: Product Management Fellow
+  Manager, Software Engineering:
+    6: Manager, Software Engineering
+    7: Senior Manager, Software Engineering
+    8: Director, Software Engineering
+    9: Senior Director, Software Engineering
+    10: VP, Software Engineering
+
+attributes:
+  Software Engineer:
+    "Software Creation: Quality":
+      - attribute: "Writes consistently good and maintainable code, and needs little syntax/convention feedback."
+        max: 2
+      - attribute: "Writes consistently great code requiring no syntax/convention feedback."
+        min: 3
+      - attribute: "Consumes documentation and only asks teammates when documentation and effort don't yield results; produces basic documentation."
+        max: 1
+      - attribute: "Often adds new and relevant documentation to existing repositories of knowledge."
+        min: 2
+        max: 2
+      - attribute: "Understands the organizational value of great documentation and spends time to maintain, update and extend existing repositories of knowledge."
+        min: 3
+      - attribute: "Creates & structures documentation for large code projects concisely & consistently."
+        min: 4
+      - attribute: "Leads efforts to improve documentation & code skills sharing across teams."
+        min: 5
+      - attribute: "Understands the basics of writing automated unit & functional tests."
+        max: 2
+      # TODO: more
+    "Software Creation: Architecture":
+      - attribute: "Some architectural design/approach feedback may be necessary, but understands and applies feedback consistently."
+        max: 1
+      - attribute: "Strong architectural design & approach experience; more complex designs refined with senior teammates."
+        min: 2
+        max: 3
+      - attribute: "Deep architectural & design pattern experience; consults for teammates on more difficult designs, and sets up new projects to ensure architectural success."
+        min: 4
+      - attribute: "Works with very senior engineers regularly to define & refine cross-team architectural approaches with extensive experience & sharing."
+        min: 5
+      # TODO: more
+    "Software Creation: Running Systems":
+      - attribute: "Uses out-of-the-box tools to instrument and monitor systems; works well with the monitoring philosophy espoused by their team."
+        max: 1
+      # TODO: more
+    "Team Collaboration: Project & Team Scope":
+      - attribute: "Is a member of one or two small or medium projects at a time."
+        max: 1
+      # TODO: more
+    "Team Collaboration: Technical Collaboration":
+      - attribute: "Communicates accurately about all technical subjects in their work—both speaking/writing and listening/understanding; spends more time learning than explaining."
+        max: 1
+      # TODO: more
+    "Team Collaboration: Communication & Empathy":
+      - attribute: "Communicates concisely, effectively & clearly."
+      - attribute: "May sometimes need minimal coaching on communication skills, but overall a strong speaker and listener."
+        max: 1
+      # TODO: more
+    "Ownership & Accountability: Productivity":
+      - attribute: "Usually accomplishes tasks within an acceptable time frame."
+        max: 1
+      # TODO: more
+    "Ownership & Accountability: Project Accountability":
+      - attribute: "Avoids surprising stakeholders whenever project expectations change; communicates changes early and often."
+        max: 1
+      # TODO: more
+    "Ownership & Accountability: Production Support":
+      - attribute: "Participates in team on-call or escalation procedures and can resolve basic issues."
+        max: 1
+      # TODO: more
+    "Ownership & Accountability: Autonomy & Self-Starting":
+      - attribute: "Dives into new projects & technologies with curiosity and a drive to understand."
+      - attribute: "Maintains a healthy amount of urgency and consistency in their work."
+      - attribute: "Makes effective use of existing documentation, examples and other resources to gain a solid understanding before relying on teammates."
+        max: 1
+      # TODO: more
+    "Brand & Relationships: Product & Business Team":
+      - attribute: "Understands how product & business teams adjacent to theirs operate."
+        max: 1
+      # TODO: more
+    "Brand & Relationships: Engineering Team Relationships":
+      - attribute: "Understands team & organizational engineering strategy and how they apply to their role & team."
+        max: 1
+      # TODO: more
+    "Brand & Relationships: External Representation":
+      - attribute: "Always represents self, team & company positively to external audiences."
+      - attribute: "Thinks about how external communication affects the brand and plans accordingly, sometimes with help from teammates or leaders."
+        max: 1
+      # TODO: more
+    "Innovation: Contributing to Product Enhancements":
+      - attribute: "Understands drivers behind product roadmap items as it affects their team."
+        max: 1
+      # TODO: more
+    "Innovation: Driving Efficiency of Systems & Practices":
+      - attribute: "Takes responsibility for customer-impacting performance of systems on which they work."
+      - attribute: "Sometimes thinks about team practices; may suggest improvements to team or manager."
+        max: 1
+      # TODO: more
+    "Innovation: Collaborating on Patents":
+      - attribute: "Understands company patent strategy and may surface patent opportunities to team & manager."
+        max: 1
+      # TODO: more
+    "Vision: Technical Strategy Mapping":
+      - attribute: "Articulates a coherent future vision for a component or components that they own within a larger system."
+        max: 1
+      # TODO: more
+    "Integrity & Ethics: Fiscal Responsibility":
+      - attribute: "Spends carefully and only when it's in service of team & company goals."
+      - attribute: "Ensures timely & accurate accounting of all business expenses."
+      - attribute: "Understands relevant financial drivers behind projects or business initiatives."
+      # TODO: more
+    "Integrity & Ethics: Privacy & Security":
+      - attribute: "Understands basic security & privacy principles; always applies them to daily work."
+      - attribute: "Understands the importance & gravity of handling user data and does so responsibly without exception."
+      - attribute: "Immediately reports privacy or security concerns to manager or Privacy/Security teams."
+      # TODO: more
+    "Integrity & Ethics: Honesty & Accuracy":
+      - attribute: "Understands and always tries to give consistent and honest work estimates."
+      - attribute: "Usually understands the limitations of their own knowledge and retains humility about their experiences."
+        max: 1
+      # TODO: more
+    "Leadership: Mentorship & Guidance":
+      - attribute: "Knows when to seek out mentorship to grow their own experience."
+        max: 1
+      # TODO: more
+    "Leadership: Broadcasting & Knowledge Sharing":
+      - attribute: "Feels comfortable explaining technical subjects to their own team."
+        max: 1
+      # TODO: more
+    "Leadership: Influence & Alignment":
+      - attribute: "Can persuade some direct teammates based on the merits of a technical approach."
+        max: 1
+      # TODO: more
