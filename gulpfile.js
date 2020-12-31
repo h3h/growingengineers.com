@@ -11,40 +11,44 @@ var watchify = require("watchify");
 var paths = {
   pages: ["src/*.html"],
 };
+var browserifyOpts = {
+  basedir: ".",
+  debug: true,
+  entries: ["src/main.ts"],
+  cache: {},
+  packageCache: {},
+  outfile: "app.js",
+};
 
-var watchedBrowserify = watchify(
-  browserify({
-    basedir: ".",
-    debug: true,
-    entries: ["src/main.ts"],
-    cache: {},
-    packageCache: {},
-    outfile: "app.js",
-  }).plugin(tsify)
-);
+var hostBrowserify = browserify(browserifyOpts).plugin(tsify);
+var hostWatchify = watchify(browserify(browserifyOpts)).plugin(tsify);
 
-gulp.task("copy-html", function () {
+function copyHTML() {
   return gulp.src(paths.pages).pipe(gulp.dest("dist"));
-});
-
-function bundle() {
-  return watchedBrowserify
-    .bundle()
-    .on("error", fancy_log)
-    .pipe(source("app.js"))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(uglify())
-    .pipe(sourcemaps.write("./"))
-    .pipe(gulp.dest("dist"));
 }
 
-gulp.task("default", gulp.series(gulp.parallel("copy-html"), bundle));
+function bundle(host) {
+  return () => {
+    console.log("host: ", host);
+    return host.bundle().
+      on("error", fancy_log)
+      .pipe(source("app.js"))
+      .pipe(buffer())
+      .pipe(sourcemaps.init({ loadMaps: true }))
+      .pipe(uglify())
+      .pipe(sourcemaps.write("./"))
+      .pipe(gulp.dest("dist"));
+  }
+}
 
-watchedBrowserify.on("update", bundle);
-watchedBrowserify.on("log", fancy_log);
+gulp.task("default", gulp.series(copyHTML, bundle(hostBrowserify)));
+
+gulp.task("watch", gulp.series(copyHTML, bundle(hostWatchify)));
+
+hostWatchify.on("update", bundle(hostWatchify));
+hostWatchify.on("log", fancy_log);
 
 gulp.task("clean", function () {
-    return gulp.src("dist/*", {read: false})
-        .pipe(clean());
+  return gulp.src("dist/*", { read: false })
+    .pipe(clean());
 });
