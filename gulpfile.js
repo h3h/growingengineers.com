@@ -29,7 +29,6 @@ function copyHTML() {
 
 function bundle(host) {
   return () => {
-    console.log("host: ", host);
     return host.bundle().
       on("error", fancy_log)
       .pipe(source("app.js"))
