@@ -1,7 +1,7 @@
 {
-  "files": ["src/main.ts", "src/person.ts"],
   "compilerOptions": {
     "noImplicitAny": true,
     "target": "es5"
-  }
+  },
+  "exclude": ["node_modules"]
 }

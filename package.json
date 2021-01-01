@@ -2,8 +2,9 @@
   "name": "growingengineers.com",
   "version": "1.0.0",
   "description": "A web app for job leveling",
-  "main": "./dist/main.js",
+  "main": "./dist/app.js",
   "scripts": {
+    "lint": "tslint --project tsconfig.json",
     "run": "gulp",
     "test": "mocha",
     "tree": "tree -I 'node_modules|\\.git'"
@@ -36,6 +37,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "mocha": "^8.2.1",
+    "ts-node": "^9.1.1",
     "tsify": "^5.0.2",
     "typescript": "^4.1.3",
     "vinyl-buffer": "^1.0.1",
