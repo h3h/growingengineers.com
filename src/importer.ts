@@ -1,7 +1,5 @@
 import * as YAML from "js-yaml"
 
-type ConfigRoles = Array<string>
-type ConfigLevels = Map<string, Map<number, string>>
 interface ConfigAttributeDetail {
   attribute: string
   min?: number
@@ -14,8 +12,8 @@ interface ConfigAttributes {
 }
 export interface ValidConfig {
   v: number
-  roles: ConfigRoles
-  levels: ConfigLevels
+  roles: Array<string>
+  levels: Map<string, Map<number, string>>
   attributes: ConfigAttributes
 }
 
@@ -36,10 +34,10 @@ export class Importer {
         this.config = parsed
         return true
       } else {
-        typeof this?.onerror == "function" && this.onerror(errors)
+        typeof this?.onerror === "function" && this.onerror(errors)
       }
     } catch (e) {
-      typeof this?.onerror == "function" && this.onerror([e])
+      typeof this?.onerror === "function" && this.onerror([e])
     }
     return false
   }
